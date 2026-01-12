@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김서연 | 프론트엔드 개발자 포트폴리오</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Tailwind dark mode configuration
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 text-slate-800 dark:text-slate-100 selection:bg-indigo-200 dark:selection:bg-indigo-900">
+
+    <!-- Dark Mode Toggle Button -->
+    <div class="fixed top-6 right-6 z-50">
+        <button id="theme-toggle" class="p-3 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-md shadow-lg border border-white/50 dark:border-slate-700 text-slate-600 dark:text-yellow-400 hover:scale-110 transition-all duration-300">
+            <i id="theme-icon-light" data-lucide="sun" class="hidden"></i>
+            <i id="theme-icon-dark" data-lucide="moon"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="hero" class="max-w-5xl mx-auto pt-20 pb-12 px-6 fade-in">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative w-32 h-32 md:w-48 md:h-48 rounded-full bg-white dark:bg-slate-800 overflow-hidden border-4 border-white dark:border-slate-700 shadow-xl">
+                    <img 
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=256&h=256&auto=format&fit=crop" 
+                        alt="프로필 이미지" 
+                        class="w-full h-full object-cover"
+                    >
+                </div>
+            </div>
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 mb-2">
+                    김서연 <span class="text-2xl md:text-3xl font-medium text-slate-400 dark:text-slate-500">(Kim Seoyeon)</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-semibold text-slate-600 dark:text-slate-300 mb-4">프론트엔드 개발자</p>
+                <p class="text-lg text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed italic">"사용자 경험을 최우선으로 생각하는 프론트엔드 개발자입니다."</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 pb-24 space-y-12">
+        <!-- About Section -->
+        <section class="fade-in">
+            <div class="glass-card rounded-3xl p-8 shadow-sm">
+                <div class="flex items-center gap-2 mb-6 text-indigo-600 dark:text-indigo-400">
+                    <i data-lucide="user" class="w-6 h-6"></i>
+                    <h2 class="text-2xl font-bold uppercase tracking-wider">About Me</h2>
+                </div>
+                <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+                    안녕하세요! 3년차 프론트엔드 개발자 김서연입니다. 사용자가 직관적으로 사용할 수 있는 인터페이스를 만드는 것에 열정을 가지고 있습니다. 최신 웹 기술을 활용하여 빠르고 아름다운 웹 애플리케이션을 개발하는 것을 즐깁니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tech Stack Grid -->
+        <section class="fade-in">
+            <div class="flex items-center gap-2 mb-8 text-indigo-600 dark:text-indigo-400 px-2">
+                <i data-lucide="cpu" class="w-6 h-6"></i>
+                <h2 class="text-2xl font-bold uppercase tracking-wider">Tech Stack</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Frontend -->
+                <div class="bg-white/60 dark:bg-slate-800/40 hover:bg-white dark:hover:bg-slate-800 transition-colors p-6 rounded-2xl shadow-sm border border-white/50 dark:border-slate-700/50 group">
+                    <div class="flex items-center gap-3 mb-4 text-slate-400 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors">
+                        <i data-lucide="code"></i>
+                        <h3 class="font-bold text-slate-600 dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-white">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">React</span>
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">Next.js</span>
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">TypeScript</span>
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">Vue.js</span>
+                    </div>
+                </div>
+                <!-- Styling -->
+                <div class="bg-white/60 dark:bg-slate-800/40 hover:bg-white dark:hover:bg-slate-800 transition-colors p-6 rounded-2xl shadow-sm border border-white/50 dark:border-slate-700/50 group">
+                    <div class="flex items-center gap-3 mb-4 text-slate-400 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors">
+                        <i data-lucide="palette"></i>
+                        <h3 class="font-bold text-slate-600 dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-white">Styling</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">CSS3</span>
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">Sass</span>
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">Tailwind CSS</span>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="bg-white/60 dark:bg-slate-800/40 hover:bg-white dark:hover:bg-slate-800 transition-colors p-6 rounded-2xl shadow-sm border border-white/50 dark:border-slate-700/50 group">
+                    <div class="flex items-center gap-3 mb-4 text-slate-400 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors">
+                        <i data-lucide="terminal"></i>
+                        <h3 class="font-bold text-slate-600 dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-white">Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">Git</span>
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">Figma</span>
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">Vite</span>
+                    </div>
+                </div>
+                <!-- Others -->
+                <div class="bg-white/60 dark:bg-slate-800/40 hover:bg-white dark:hover:bg-slate-800 transition-colors p-6 rounded-2xl shadow-sm border border-white/50 dark:border-slate-700/50 group">
+                    <div class="flex items-center gap-3 mb-4 text-slate-400 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors">
+                        <i data-lucide="database"></i>
+                        <h3 class="font-bold text-slate-600 dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-white">Others</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">REST API</span>
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">GraphQL</span>
+                        <span class="px-3 py-1 bg-white dark:bg-slate-700 text-sm font-medium text-slate-600 dark:text-slate-300 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600">Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="fade-in">
+            <div class="flex items-center gap-2 mb-8 text-indigo-600 dark:text-indigo-400 px-2">
+                <i data-lucide="briefcase" class="w-6 h-6"></i>
+                <h2 class="text-2xl font-bold uppercase tracking-wider">Projects</h2>
+            </div>
+            <div class="grid gap-6">
+                <!-- Project 1 -->
+                <div class="flex flex-col md:flex-row glass-card hover:bg-white dark:hover:bg-slate-800 transition-all p-8 rounded-3xl shadow-sm items-start md:items-center gap-6 group cursor-pointer">
+                    <div class="text-4xl bg-indigo-50 dark:bg-indigo-900/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform">🛒</div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-1">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">E-commerce 플랫폼 리뉴얼</h3>
+                            <span class="text-sm font-semibold text-indigo-400 bg-indigo-50 dark:bg-indigo-900/50 px-2 py-0.5 rounded-full">2024</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400">대규모 커머스 사이트의 UI/UX 개선 및 성능 최적화 진행</p>
+                    </div>
+                    <i data-lucide="external-link" class="text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors"></i>
+                </div>
+                <!-- Project 2 -->
+                <div class="flex flex-col md:flex-row glass-card hover:bg-white dark:hover:bg-slate-800 transition-all p-8 rounded-3xl shadow-sm items-start md:items-center gap-6 group cursor-pointer">
+                    <div class="text-4xl bg-indigo-50 dark:bg-indigo-900/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform">📱</div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-1">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">모바일 반응형 대시보드 개발</h3>
+                            <span class="text-sm font-semibold text-indigo-400 bg-indigo-50 dark:bg-indigo-900/50 px-2 py-0.5 rounded-full">2023</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400">다양한 데이터 시각화를 포함한 실시간 모니터링 시스템 구축</p>
+                    </div>
+                    <i data-lucide="external-link" class="text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors"></i>
+                </div>
+                <!-- Project 3 -->
+                <div class="flex flex-col md:flex-row glass-card hover:bg-white dark:hover:bg-slate-800 transition-all p-8 rounded-3xl shadow-sm items-start md:items-center gap-6 group cursor-pointer">
+                    <div class="text-4xl bg-indigo-50 dark:bg-indigo-900/30 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform">🎨</div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-1">
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">디자인 시스템 구축</h3>
+                            <span class="text-sm font-semibold text-indigo-400 bg-indigo-50 dark:bg-indigo-900/50 px-2 py-0.5 rounded-full">2023</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400">사내 공통 컴포넌트 라이브러리 제작 및 문서화</p>
+                    </div>
+                    <i data-lucide="external-link" class="text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="fade-in">
+            <div class="bg-slate-800 dark:bg-slate-900 text-white rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+                <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-2">Let's connect!</h2>
+                        <p class="text-slate-400">함께 멋진 프로젝트를 만들어보아요.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-auto">
+                        <a href="mailto:seoyeon.kim@example.com" class="flex items-center gap-3 p-3 px-5 rounded-xl bg-slate-700/50 hover:bg-indigo-600 transition-colors border border-slate-700 group">
+                            <i data-lucide="mail" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                            <span class="text-sm font-medium">seoyeon.kim@example.com</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 p-3 px-5 rounded-xl bg-slate-700/50 hover:bg-indigo-600 transition-colors border border-slate-700 group">
+                            <i data-lucide="github" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                            <span class="text-sm font-medium">github.com/seoyeonkim</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 p-3 px-5 rounded-xl bg-slate-700/50 hover:bg-indigo-600 transition-colors border border-slate-700 group">
+                            <i data-lucide="linkedin" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                            <span class="text-sm font-medium">linkedin.com/in/seoyeonkim</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 p-3 px-5 rounded-xl bg-slate-700/50 hover:bg-indigo-600 transition-colors border border-slate-700 group">
+                            <i data-lucide="globe" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                            <span class="text-sm font-medium">seoyeon.dev</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center pb-12 text-slate-400 dark:text-slate-600 text-sm">
+        © 2024 Kim Seoyeon. All rights reserved.
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-icon-light');
+        const moonIcon = document.getElementById('theme-icon-dark');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme in localStorage or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            htmlElement.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            const isDark = htmlElement.classList.contains('dark');
+            
+            // Toggle icons
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+            
+            // Save preference
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
